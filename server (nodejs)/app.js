@@ -7,7 +7,6 @@ const clubsRouters = require('./api/routers/clubs');
 const eventsRouters = require('./api/routers/events');
 
 app.use(morgan('dev'));
-
 app.use('/foodmenu', foodMenuRouters);
 app.use('/clubs', clubsRouters);
 app.use('/events', eventsRouters);

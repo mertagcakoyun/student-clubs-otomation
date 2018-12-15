@@ -13,24 +13,24 @@ router.post('/', (req, res, next) => {
     });
 });
 
-router.get('/:eventId', (req, res, next) => {
-    const id = req.params.eventId;
+router.get('/:event', (req, res, next) => {
+    const id = req.params.event;
     res.status(200).json({
         message: 'event is here!',
         id: id
     });
 });
 
-router.patch('/:eventId', (req, res, next) => {
-    const id = req.params.eventId;
+router.patch('/:event', (req, res, next) => {
+    const id = req.params.event;
     res.status(200).json({
         message: 'event infos updared!',
         id: id
     });
 });
 
-router.delete('/:eventId', (req, res, next) => {
-    const id = req.params.eventId;
+router.delete('/:event', (req, res, next) => {
+    const id = req.params.event;
     res.status(200).json({
         message: 'eventId deleted!',
         id: id

@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+router.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    next()
+})
+
 router.get('/', (req, res, next) => {
     res.status(200).json({
         message: 'all list of the student clubs'
@@ -13,9 +19,9 @@ router.post('/', (req, res, next) => {
     });
 });
 
-router.get('/:clubId', (req, res, next) => {
-    const id = req.params.clubId;
-    if (id === 'yna'){
+router.get('/:club', (req, res, next) => {
+    const id = req.params.club;
+    if (id === 'yna') {
         res.status(200).json({
             message: 'Here we are, the YNA!',
             id: id
@@ -27,16 +33,16 @@ router.get('/:clubId', (req, res, next) => {
     }
 });
 
-router.patch('/:clubId', (req, res, next) => {
-    const id = req.params.clubId;
+router.patch('/:club', (req, res, next) => {
+    const id = req.params.club;
     res.status(200).json({
         message: 'club infos updared!',
         id: id
     });
 });
 
-router.delete('/:clubId', (req, res, next) => {
-    const id = req.params.clubId;
+router.delete('/:club', (req, res, next) => {
+    const id = req.params.club;
     res.status(200).json({
         message: 'club deleted!',
         id: id
