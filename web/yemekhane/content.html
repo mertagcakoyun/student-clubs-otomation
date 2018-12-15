@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yemekhane Listesi</title>
+    <link rel="icon" sizes="64x64" href="food.png">
+    <script>
+       var phpVar = <?php echo json_encode($obj) ?>;
+    </script>
+    <style>
+        body {
+            margin: 0 auto;
+
+        }
+        .content {
+            margin: 0 auto;
+            width: 624px;
+        }
+        table {
+            width:400px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        table.t01 tbody:nth-child(even) {
+            background-color: #eee;
+        }
+        table.t01 tbody:nth-child(odd) {
+            background-color: #fff;
+        }
+        table.t01 tbody tr th {
+            background-color: #d2d2d2;
+        }
+        table.t01 tbody:first-child tr th{
+            background-color: #4b4b4b!important;
+            color: #ffffff!important;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2 id="title">Yemekhane Listesi</h2>
+    <p id="info"></p>
+    <hr />
+    <h5 id="subTitle"></h5>
+    <p>
+        <table id="datas" class="t01">
+        </table>
+    </p>
+    <hr />
+    <p id="info">Powered by <a href="http://bedirhanyildirim.com" target="_blank">Bedirhan Yıldırım</a></p>
+    <script>
+        var table = document.getElementById('datas');
+        let string = ""
+        let stepper = 0
+        phpVar["values"].forEach( item => {
+            string = "<tr>"
+            item.forEach ( food => {
+                string += (stepper == 0 ? "<th>" : "<td>") + food + (stepper == 0 ? "</th>" : "</td>")
+            })
+            string += "</tr>"
+            stepper += 1
+            table.innerHTML += string
+        })
+    </script>
+</div>
+</body>
+</html>
