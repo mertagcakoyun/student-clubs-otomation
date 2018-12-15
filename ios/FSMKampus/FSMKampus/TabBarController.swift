@@ -1,24 +1,24 @@
 //
-//  EventViewController.swift
+//  TabBarController.swift
 //  FSMKampus
 //
-//  Created by Mert Agcakoyun on 6.12.2018.
+//  Created by Mert Agcakoyun on 7.12.2018.
 //  Copyright © 2018 Mert Agcakoyun. All rights reserved.
 //
 
 import UIKit
 
-class EventViewController: UIViewController {
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hoşgeldin")
-       
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        // Dispose of any resources that can be recreated.
     }
     
 
