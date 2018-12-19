@@ -7,5 +7,7 @@
     curl_close($ch);
     $obj = json_decode($result);
 
-    include("content.html")
+    include("../header.html");
+    include("content.html");
+    include("../footer.html");
 ?>

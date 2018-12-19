@@ -1,75 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Yemekhane Listesi</title>
-    <link rel="icon" sizes="64x64" href="food.png">
-    <script>
-       var phpVar = <?php echo json_encode($obj) ?>;
-    </script>
-    <style>
-        body {
-            margin: 0 auto;
-
-        }
-        .content {
-            margin: 0 auto;
-            width: 624px;
-        }
-        table {
-            width:400px;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        table.t01 tbody:nth-child(even) {
-            background-color: #eee;
-        }
-        table.t01 tbody:nth-child(odd) {
-            background-color: #fff;
-        }
-        table.t01 tbody tr th {
-            background-color: #d2d2d2;
-        }
-        table.t01 tbody:first-child tr th{
-            background-color: #4b4b4b!important;
-            color: #ffffff!important;
-        }
-    </style>
-</head>
-<body>
+<!-- Content Start -->
 <div class="content">
-    <h2 id="title">Yemekhane Listesi</h2>
-    <p id="info"></p>
-    <hr />
-    <h5 id="subTitle"></h5>
-    <p>
-        <table id="datas" class="t01">
-        </table>
-    </p>
-    <hr />
-    <p id="info">Powered by <a href="http://bedirhanyildirim.com" target="_blank">Bedirhan Yıldırım</a></p>
-    <script>
-        var table = document.getElementById('datas');
-        let string = ""
-        let stepper = 0
-        phpVar["values"].forEach( item => {
-            string = "<tr>"
-            item.forEach ( food => {
-                string += (stepper == 0 ? "<th>" : "<td>") + food + (stepper == 0 ? "</th>" : "</td>")
+    <div class="container">
+        <div class="row">
+            <h2 class="title text-center">Yemekhane Menüsü</h2>
+        </div>
+        <div class="card" id="yesterday">
+            <div class="card-header">
+                <div class="card-text">
+                    <div class="card-title yesterday">
+                        Dünün Menüsü
+                    </div>
+                    <div class="card-author yesterday">
+                        14 Aralık 2018 - Pazartesi
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-desc yesterday">
+                        Here is the about project description.
+                </div>
+            </div>
+        </div>
+        <div class="card" id="today">
+            <div class="card-header">
+                <div class="card-text">
+                    <div class="card-title today">
+                        Bugünün Menüsü
+                    </div>
+                    <div class="card-author today">
+                        14 Aralık 2018 - Pazartesi
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-desc today">
+                        Here is the about project description.
+                </div>
+            </div>
+        </div>
+        <div class="card" id="tomorrow">
+            <div class="card-header">
+                <div class="card-text">
+                    <div class="card-title tomorrow">
+                        Yarının Menüsü
+                    </div>
+                    <div class="card-author tomorrow">
+                        14 Aralık 2018 - Pazartesi
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-desc tomorrow">
+                        Here is the about project description.
+                </div>
+            </div>
+        </div>
+        <script>
+            //Find today
+            var today = new Date()
+            var dd = today.getDate()
+            var mm = today.getMonth() + 1 //January is 0!
+            var yyyy = today.getFullYear()
+            if (dd < 10) {
+            dd = '0' + dd
+            } 
+            if (mm < 10) {
+            mm = '0' + mm
+            } 
+            var today = dd + '.' + mm + '.' + yyyy
+            //Find yesterday
+            var yesterday = new Date()
+            yesterday.setDate(yesterday.getDate() -1)
+            var dd = yesterday.getDate()
+            var mm = yesterday.getMonth() + 1 //January is 0!
+            var yyyy = yesterday.getFullYear()
+            if (dd < 10) {
+            dd = '0' + dd
+            } 
+            if (mm < 10) {
+            mm = '0' + mm
+            } 
+            var yesterday = dd + '.' + mm + '.' + yyyy
+            //Find tomorrow
+            var tomorrow = new Date()
+            tomorrow.setDate(tomorrow.getDate() +1)
+            var dd = tomorrow.getDate()
+            var mm = tomorrow.getMonth() + 1 //January is 0!
+            var yyyy = tomorrow.getFullYear()
+            if (dd < 10) {
+            dd = '0' + dd
+            } 
+            if (mm < 10) {
+            mm = '0' + mm
+            } 
+            var tomorrow = dd + '.' + mm + '.' + yyyy
+            //Get data
+            var phpVar = <?php echo json_encode($obj) ?>;
+            //var table = document.getElementById('datas');
+            let string = ""
+            let stepper = 0
+            //Menu of day
+            var todayMenu = undefined
+            var yesterdayMenu = undefined
+            var tomorrowMenu = undefined
+            phpVar["values"].forEach( item => {
+                string = "<tr>"
+                item.forEach ( food => {
+                    string += (stepper == 0 ? "<th>" : "<td>") + food + (stepper == 0 ? "</th>" : "</td>")
+                })
+                string += "</tr>"
+                stepper += 1
+                //table.innerHTML += string
+                console.log(item[0])
+                if (item[0].localeCompare(today) == 0) {
+                    todayMenu = item
+                } else if (item[0].localeCompare(yesterday) == 0) {
+                    yesterdayMenu = item
+                } else if (item[0].localeCompare(tomorrow) == 0) {
+                    tomorrowMenu = item
+                }
             })
-            string += "</tr>"
-            stepper += 1
-            table.innerHTML += string
-        })
-    </script>
+            //Format today data
+            if (todayMenu != undefined) {
+                var formatedMenu1 = ""
+                todayMenu.forEach(item => {
+                    formatedMenu1 += (item.localeCompare(today) == 0 ? "" : item + "<br>")
+                })
+                document.getElementsByClassName("card-desc today")[0].innerHTML = formatedMenu1
+                document.getElementsByClassName("card-author today")[0].innerHTML = today
+            } else {
+                document.getElementById("today").style.display = "none"
+            }
+            if (yesterdayMenu != undefined) {
+                var formatedMenu2 = ""
+                yesterdayMenu.forEach(item => {
+                    formatedMenu2 += (item.localeCompare(yesterday) == 0 ? "" : item + "<br>")
+                })
+                document.getElementsByClassName("card-desc yesterday")[0].innerHTML = formatedMenu2
+                document.getElementsByClassName("card-author yesterday")[0].innerHTML = yesterday
+            } else {
+                document.getElementById("yesterday").style.display = "none"
+            }
+            if (tomorrowMenu != undefined) {
+                var formatedMenu3 = ""
+                tomorrowMenu.forEach(item => {
+                    formatedMenu3 += (item.localeCompare(tomorrow) == 0 ? "" : item + "<br>")
+                })
+                document.getElementsByClassName("card-desc tomorrow")[0].innerHTML = formatedMenu3
+                document.getElementsByClassName("card-author tomorrow")[0].innerHTML = tomorrow
+            } else {
+                document.getElementById("tomorrow").style.display = "none"
+            }
+        </script>
+    </div>
 </div>
-</body>
-</html>
+<!--#Content End -->
