@@ -1,0 +1,193 @@
+{
+    "name" : "Fatih Sultan Mehmet Vakıf Üniversitesi",
+    "campuses" : [
+        {
+            "name" : "Fatih Yerleşkesi",
+            "rectorship" : true,
+            "mainCampus" : false,
+            "preparation" : false,
+            "address" : "Zeyrek Mah. Büyükkaraman Cad. No:53 Fatih /İSTANBUL",
+            "telephone" : "02125218100",
+            "link" : "http://www.fatihsultan.edu.tr/Yerleskeler-Fatih-Rektorluk",
+            "img" : "http://www.fatihsultan.edu.tr/img/yerleskeler/rektorluk.png"
+        },
+        {
+            "name" : "Haliç Yerleşkesi",
+            "rectorship" : false,
+            "mainCampus" : true,
+            "preparation" : false,
+            "address" : "Sütlüce Mah. Karaağaç Cad. No:12/A Beyoğlu / İSTANBUL",
+            "telephone" : "02125218100",
+            "link": "http://www.fatihsultan.edu.tr/Yerleskeler-Halic-Yerleskesi",
+            "img" : "http://www.fatihsultan.edu.tr/img/yerleskeler/halic.png"
+        },
+        {
+            "name" : "Topkapı Yerleşkesi",
+            "rectorship" : false,
+            "mainCampus" : false,
+            "preparation" : false,
+            "address" : "Merkez Efendi Mah. Mevlevihane Cad. No: 25 Zeytinburnu / İstanbul",
+            "telephone" : "02125218100",
+            "link" : "http://www.fatihsultan.edu.tr/Yerleskeler-Topkapi-Yerleskesi",
+            "img" : "http://www.fatihsultan.edu.tr/img/yerleskeler/topkapi.png"
+        },
+        {
+            "name" : "Kandilli Yerleşkesi",
+            "rectorship" : false,
+            "mainCampus" : false,
+            "preparation" : false,
+            "address" : "Kandilli Mah. Rasathane Cad. Hıdrellez Sok. No:3 Üsküdar / İSTANBUL",
+            "telephone" : "02125218100",
+            "link": "http://www.fatihsultan.edu.tr/Kandilli-Yerleskesi",
+            "img" : "http://www.fatihsultan.edu.tr/img/yerleskeler/kandilli.png"
+        },
+        {
+            "name" : "Küçük Çamlıca Yerleşkesi",
+            "rectorship" : false,
+            "mainCampus" : false,
+            "preparation" : true,
+            "address" : "Küçük Çamlıca Mah. Çilehane Yolu Caddesi No:8 Üsküdar / İstanbul",
+            "telephone" : "02125218100",
+            "link" : "http://www.fatihsultan.edu.tr/Kucukcamlica-Yerleskesi",
+            "img" : "http://www.fatihsultan.edu.tr/img/yerleskeler/camlica.png"
+        },
+        {
+            "name" : "Üsküdar Yerleşkesi",
+            "rectorship" : false,
+            "mainCampus" : false,
+            "preparation" : false,
+            "address" : "Valide-i Atik Mah. Kartalbaba Cad. No: 36 Üsküdar İstanbul",
+            "telephone" : "02125218100",
+            "link" : "http://www.fatihsultan.edu.tr/Uskudar-Atik-Valide-Yerleskesi",
+            "img" : "http://www.fatihsultan.edu.tr/img/yerleskeler/atikvalide.png"
+        }
+    ],
+    "faculties" : [
+        {
+            "name" : "Edebiyat Fakültesi",
+            "departments" : [
+                "Bilim Tarihi", "Psikoloji", "Tarih", "Türk Dili ve Edebiyatı"
+            ],
+            "campus" : {
+                "name" : "Üsküdar Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : false,
+                "preparation" : false,
+                "address" : "Valide-i Atik Mah. Kartalbaba Cad. No: 36 Üsküdar İstanbul",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Eğitim Fakültesi",
+            "departments" : [
+                "Okuk Öncesi Öğretmenliği", "Rehberlik ve Psikolojik Danışmanlık", "Türkçe Öğretmenliği"
+            ],
+            "campus" : {
+                "name" : "Üsküdar Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : false,
+                "preparation" : false,
+                "address" : "Valide-i Atik Mah. Kartalbaba Cad. No: 36 Üsküdar İstanbul",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Güzel Sanatlar Fakültesi",
+            "departments" : [
+                "Geleneksel Türk Sanatları", "Grafik Tasarım"
+            ],
+            "campus" : {
+                "name" : "Kandilli Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : false,
+                "preparation" : false,
+                "address" : "Kandilli Mah. Rasathane Cad. Hıdrellez Sok. No:3 Üsküdar / İSTANBUL",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Güzel Sanatlar Myo",
+            "departments" : [
+                "Mimari Restorasyon"
+            ],
+            "campus" : {
+                "name" : "Kandilli Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : false,
+                "preparation" : false,
+                "address" : "Kandilli Mah. Rasathane Cad. Hıdrellez Sok. No:3 Üsküdar / İSTANBUL",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Hukuk Fakültesi",
+            "departments" : [
+                "Hukuk"
+            ],
+            "campus" : {
+                "name" : "Haliç Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : true,
+                "preparation" : false,
+                "address" : "Sütlüce Mah. Karaağaç Cad. No:12/A Beyoğlu / İSTANBUL",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "İslami İlimler Fakültesi",
+            "departments" : [
+                "İslami İlimler"
+            ],
+            "campus" : {
+                "name" : "Topkapı Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : false,
+                "preparation" : false,
+                "address" : "Merkez Efendi Mah. Mevlevihane Cad.Yenikapı Mevlevihanesi No: 25 Zeytinburnu / İstanbul",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Meslek Yüksekokulu",
+            "departments" : [
+                "Adalet", "Çocuk Gelişim", "Sivil Havacılık Kabin Hiz."
+            ],
+            "campus" : {
+                "name" : "Haliç Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : true,
+                "preparation" : false,
+                "address" : "Sütlüce Mah. Karaağaç Cad. No:12/A Beyoğlu / İSTANBUL",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Mimarlık ve Tasarım Fakültesi",
+            "departments" : [
+                "İç Mimarlık", "Mimarlık"
+            ],
+            "campus" : {
+                "name" : "Haliç Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : true,
+                "preparation" : false,
+                "address" : "Sütlüce Mah. Karaağaç Cad. No:12/A Beyoğlu / İSTANBUL",
+                "telephone" : "02125218100"
+            }
+        },
+        {
+            "name" : "Mühendislik Fakültesi",
+            "departments" : [
+                "Bilgisayar Mühendisliği", "Biyomedikal Mühendisliği", "Elektrik-Elektronik Mühendisliği", "İnşaat Mühendisliği"
+            ],
+            "campus" : {
+                "name" : "Haliç Yerleşkesi",
+                "rectorship" : false,
+                "mainCampus" : true,
+                "preparation" : false,
+                "address" : "Sütlüce Mah. Karaağaç Cad. No:12/A Beyoğlu / İSTANBUL",
+                "telephone" : "02125218100"
+            }
+        }
+    ]
+}

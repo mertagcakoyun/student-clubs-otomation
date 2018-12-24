@@ -1,9 +1,7 @@
 <!-- Content Start -->
 <div class="content">
     <div class="container">
-        <div class="row">
-            <h2 class="title text-center">Yemekhane Menüsü</h2>
-        </div>
+        <h4 class="title">Yemekhane Menüsü</h4>
         <div class="card" id="yesterday">
             <div class="card-header">
                 <div class="card-text">
@@ -55,6 +53,19 @@
                 </div>
             </div>
         </div>
+        <h4 class="title">Aylık Menü</h4>
+        <div class="table">
+            <div class="table-header">
+                <div class="table-title">
+                    Yemekhane Menüsü
+                </div>
+            </div>
+            <div class="table-content">
+            </div>
+            <div class="table-footer">
+                <b>Kaynak: </b> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNWO7sTbgZUrJiLf7Vs1AjX5O-AsebluNshFEq6jEtjPAyr16yIb5PKwfDY4_O8OA7FzvfDLbqIGNV/pubhtml?gid=0&single=true" target="_blank">Google Sheets</a>
+            </div>
+        </div>
         <script>
             //Find today
             var today = new Date()
@@ -97,20 +108,24 @@
             //Get data
             var phpVar = <?php echo json_encode($obj) ?>;
             //var table = document.getElementById('datas');
+            var table = document.getElementsByClassName("table-content")[0]
             let string = ""
             let stepper = 0
             //Menu of day
             var todayMenu = undefined
             var yesterdayMenu = undefined
             var tomorrowMenu = undefined
+            var temp = undefined
             phpVar["values"].forEach( item => {
-                string = "<tr>"
-                item.forEach ( food => {
-                    string += (stepper == 0 ? "<th>" : "<td>") + food + (stepper == 0 ? "</th>" : "</td>")
-                })
-                string += "</tr>"
+                if (stepper != 0) {
+                    string = "<div class='gun'>"
+                    string += "<div class='tarih'>"+item[0]+"</div><div class='icerik'>"
+                    temp = item.shift()
+                    string += item + "</div></div>"
+                    table.innerHTML += string
+                    item.unshift(temp)
+                }
                 stepper += 1
-                //table.innerHTML += string
                 console.log(item[0])
                 if (item[0].localeCompare(today) == 0) {
                     todayMenu = item
