@@ -20,6 +20,7 @@
 		BC79EECC21B93974009F0000 /* FSMKampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79EECB21B93974009F0000 /* FSMKampusTests.swift */; };
 		BC79EED721B93974009F0000 /* FSMKampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79EED621B93974009F0000 /* FSMKampusUITests.swift */; };
 		BCAADDDF21BA546A00962DBC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAADDDE21BA546A00962DBC /* TabBarController.swift */; };
+		BCEAEC1921F340D700759191 /* EventTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAEC1821F340D700759191 /* EventTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BC79EED621B93974009F0000 /* FSMKampusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSMKampusUITests.swift; sourceTree = "<group>"; };
 		BC79EED821B93974009F0000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCAADDDE21BA546A00962DBC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BCEAEC1821F340D700759191 /* EventTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				BC79EEB321B93973009F0000 /* AppDelegate.swift */,
+				BCEAEC1821F340D700759191 /* EventTVCell.swift */,
 				BCAADDDE21BA546A00962DBC /* TabBarController.swift */,
 				BC0008C121B95270001BE71C /* EventViewController.swift */,
 				BC0008BF21B95254001BE71C /* DHViewViewController.swift */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEAEC1921F340D700759191 /* EventTVCell.swift in Sources */,
 				BC79EEBC21B93973009F0000 /* FSMKampus.xcdatamodeld in Sources */,
 				BCAADDDF21BA546A00962DBC /* TabBarController.swift in Sources */,
 				BC0008C021B95254001BE71C /* DHViewViewController.swift in Sources */,

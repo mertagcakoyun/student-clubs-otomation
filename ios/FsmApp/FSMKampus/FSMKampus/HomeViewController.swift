@@ -50,13 +50,13 @@ class HomeViewController: UIViewController {
                     for i in 0..<menu.values.count{
                         for j in 0..<menu.values[0].count{
                             if result == menu.values[i][0]{
-                                self.menuText.text += ("\(menu.values[i][j]) \n")
+                                self.menuText.text = ("\(menu.values[i][j]) \n")
                                 isContain = true
                             }
                         }
                     }
                     if isContain == false{
-                        self.menuText.text += "Bugün yemekhane kapalı!"
+                        self.menuText.text = "Bugün yemekhane kapalı!"
                     }
                 }
                 

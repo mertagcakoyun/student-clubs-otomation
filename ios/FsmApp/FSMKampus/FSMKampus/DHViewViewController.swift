@@ -41,13 +41,13 @@ class DHViewViewController: UIViewController {
                     for i in 0..<menu.values.count{
                         for j in 0..<menu.values[0].count{
                             if result == menu.values[i][0]{
-                                self.menuTextView.text += ("\(menu.values[i][j]) \n")
+                                self.menuTextView.text! += ("\(menu.values[i][j]) \n")
                                 isContain = true
                             }
                         }
                     }
                     if isContain == false{
-                        self.menuTextView.text += "Bugün yemekhane kapalı!"
+                        self.menuTextView.text! += "Bugün yemekhane kapalı!"
                     }
                 }
                 
