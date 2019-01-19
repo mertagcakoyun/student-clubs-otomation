@@ -1,13 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" sizes="64x64" href="images/food.png">
-    <title>FSMVU Öğrenci Otomasyonu</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- Content Start -->
+<div class="content">
+    <div class="container">
+        <h4 class="title">Kampüsler</h4>
+        <div id="campuses"></div>
+        <h4 class="title">Fakülteler</h4>
+        <div id="faculties"></div>
+    </div>
+</div>
+<!--#Content End -->
+<script>
+    var uni_info = null
+    fetch('http://fsmvu.com/uni_info.json')
+        .then(res => res.json())
+        .then(
+            res => {
+                uni_info = res
+                fillCampusInfo(uni_info)
+                fillFacultiesInfo(uni_info)
+            }
+        )
+    function fillCampusInfo (res) {
+        var campuses = res["campuses"]
+        var innerThis = document.getElementById("campuses")
+        innerThis.innerHTML = ""
+        campuses.forEach(element => {
+            innerThis.innerHTML += `<div class="card">
+                <div class="card-header">
+                    <div class="card-text">
+                        <div class="card-title">
+                            `+ element["name"] +`
+                        </div>
+                        <div class="card-author">
+                            `+ ((element["rectorship"]) == true ? "Rektörülük" : "") +`
+                            `+ ((element["preparation"]) == true ? "Hazırlık" : "") +`
+                            `+ ((element["mainCampus"]) == true ? "Ana Kampüs" : "") +`
+                        </div>
+                    </div>
+                </div>
+                <div class="card-img" style="background-image:url(`+element["img"]+`)">
+
+                </div>
+                <div class="card-footer">
+                    <div class="card-desc">
+                        <b>Adres</b>: `+ element["address"] +`<br><br>
+                        <b>Telefon</b>: `+ element["telephone"] +`
+                    </div>
+                    <div class="card-links">
+                        <ul>
+                            <li>
+                                <a href="`+ element["link"] +`" target='_blank'>Detaylı Bilgi</a>
+                            </li>
+                            <li>
+                                <a href="tel:`+element["telephone"]+`">Ara</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>`
+        });
+    }
+    function fillFacultiesInfo (res) {
+        var campuses = res["faculties"]
+        var innerThis = document.getElementById("faculties")
+        innerThis.innerHTML = ""
+        var bolumler = ""
+        campuses.forEach(element => {
+            element["departments"].forEach(e => {
+                bolumler += '<li>'+ e +'</li>'
+            })
+            innerThis.innerHTML += `<div class="card">
+                <div class="card-header">
+                    <div class="card-text">
+                        <div class="card-title">
+                            `+ element["name"] +`
+                        </div>
+                        <div class="card-author">
+                            `+ element["campus"]["name"] +`
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-desc">
+                        <b>Bölümler</b>: <br><ul>`+ bolumler +`</ul>
+                    </div>
+                </div>
+            </div>`
+            bolumler = ''
+        });
+    }
+</script>
