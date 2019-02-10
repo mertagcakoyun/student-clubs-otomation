@@ -9,14 +9,12 @@
 import UIKit
 
 class DHViewViewController: UIViewController {
-
-    @IBOutlet weak var menuTextView: UITextView!
     
+    @IBOutlet weak var menuTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         passData()
-        
-
+    
     }
     
     func date() -> String{
@@ -31,17 +29,18 @@ class DHViewViewController: UIViewController {
         var isContain = false
         let jsonuRL = "https://sheets.googleapis.com/v4/spreadsheets/1kgxnFxb9pOkPvKHMAqsMFbh5LrMYTrftUKyJQuBkR1o/values/yemekhane?key=AIzaSyDaIfxBmmFG875woD1RuKYugqCy5ZWMF48"
         guard let url = URL(string: jsonuRL) else {return}
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             do{
-                let menu = try JSONDecoder().decode(Menu.self, from: data!)
-                
-                DispatchQueue.main.async {
-                    for i in 0..<menu.values.count{
-                        for j in 0..<menu.values[0].count{
-                            if result == menu.values[i][0]{
-                                self.menuTextView.text += ("\(menu.values[i][j]) \n")
+                let menu = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                if let main = menu["values"] as? [[String]]{
+                    DispatchQueue.main.sync (execute: {
+                    
+                    for i in 0..<main.count{
+                        for j in 0..<main[0].count{
+                            if result == main[i][0]{
+                                self.menuTextView.text += ("\(main[i][j]) \n")
                                 isContain = true
                             }
                         }
@@ -49,8 +48,7 @@ class DHViewViewController: UIViewController {
                     if isContain == false{
                         self.menuTextView.text += "Bugün yemekhane kapalı!"
                     }
-                }
-                
+                    }) }
                 
                 
             }catch let err{
