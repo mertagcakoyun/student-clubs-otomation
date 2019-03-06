@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		380E60872C4F85C827E3C2F4 /* Pods_FSMKampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D7C40FA363FECB9EDB488 /* Pods_FSMKampus.framework */; };
 		6093BD8575393BC0777AF89A /* Pods_FSMKampusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275FF7E5A329BB0A9EAC2550 /* Pods_FSMKampusUITests.framework */; };
-		8D0D9C7F21FD982E001432B6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D9C7E21FD982E001432B6 /* Data.swift */; };
-		8D4D54C021C668840080962F /* arge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D54BF21C668840080962F /* arge.jpg */; };
 		8D9A3B0A21F74F8A00DF9B7B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A3B0921F74F8A00DF9B7B /* ClubTableViewCell.swift */; };
+		8DF4A8142221BD1900E7ED5B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF4A8132221BD1900E7ED5B /* EventTableViewCell.swift */; };
 		BC0008C021B95254001BE71C /* DHViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0008BF21B95254001BE71C /* DHViewViewController.swift */; };
 		BC0008C221B95270001BE71C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0008C121B95270001BE71C /* EventViewController.swift */; };
 		BC0008C421B9527B001BE71C /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0008C321B9527B001BE71C /* ClubViewController.swift */; };
@@ -49,9 +48,8 @@
 		4D76F81066FB57A948365ABF /* Pods-FSMKampusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSMKampusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSMKampusUITests/Pods-FSMKampusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		503AD7EB555D18B37C30648B /* Pods-FSMKampusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSMKampusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSMKampusUITests/Pods-FSMKampusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		534D7C40FA363FECB9EDB488 /* Pods_FSMKampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSMKampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D0D9C7E21FD982E001432B6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		8D4D54BF21C668840080962F /* arge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arge.jpg; sourceTree = "<group>"; };
 		8D9A3B0921F74F8A00DF9B7B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
+		8DF4A8132221BD1900E7ED5B /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		9AD77F4E83D3589704E0B532 /* Pods-FSMKampus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSMKampus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSMKampus/Pods-FSMKampus.debug.xcconfig"; sourceTree = "<group>"; };
 		BC0008BF21B95254001BE71C /* DHViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHViewViewController.swift; sourceTree = "<group>"; };
 		BC0008C121B95270001BE71C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
@@ -157,12 +155,11 @@
 				BCAADDDE21BA546A00962DBC /* TabBarController.swift */,
 				BC0008C121B95270001BE71C /* EventViewController.swift */,
 				BC0008BF21B95254001BE71C /* DHViewViewController.swift */,
-				8D0D9C7E21FD982E001432B6 /* Data.swift */,
 				BC0008C321B9527B001BE71C /* ClubViewController.swift */,
 				BC0008C521B97FA9001BE71C /* HomeViewController.swift */,
-				8D4D54BF21C668840080962F /* arge.jpg */,
 				BC79EEB721B93973009F0000 /* Main.storyboard */,
 				8D9A3B0921F74F8A00DF9B7B /* ClubTableViewCell.swift */,
+				8DF4A8132221BD1900E7ED5B /* EventTableViewCell.swift */,
 				BC79EEBD21B93974009F0000 /* Assets.xcassets */,
 				BC79EEBF21B93974009F0000 /* LaunchScreen.storyboard */,
 				BC79EEC221B93974009F0000 /* Info.plist */,
@@ -299,7 +296,6 @@
 			files = (
 				BC79EEC121B93974009F0000 /* LaunchScreen.storyboard in Resources */,
 				BC79EEBE21B93974009F0000 /* Assets.xcassets in Resources */,
-				8D4D54C021C668840080962F /* arge.jpg in Resources */,
 				BC79EEB921B93973009F0000 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF4A8142221BD1900E7ED5B /* EventTableViewCell.swift in Sources */,
 				BC79EEBC21B93973009F0000 /* FSMKampus.xcdatamodeld in Sources */,
 				BCAADDDF21BA546A00962DBC /* TabBarController.swift in Sources */,
 				BC0008C021B95254001BE71C /* DHViewViewController.swift in Sources */,
@@ -423,7 +420,6 @@
 				BC0008C421B9527B001BE71C /* ClubViewController.swift in Sources */,
 				BC79EEB421B93973009F0000 /* AppDelegate.swift in Sources */,
 				BC0008C621B97FA9001BE71C /* HomeViewController.swift in Sources */,
-				8D0D9C7F21FD982E001432B6 /* Data.swift in Sources */,
 				BC0008C221B95270001BE71C /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

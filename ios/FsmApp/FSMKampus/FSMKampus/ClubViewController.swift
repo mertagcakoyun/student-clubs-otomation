@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 struct Club:Decodable{
     let range : String
     let majorDimension : String
@@ -19,9 +18,6 @@ class ClubViewController: UIViewController, UITableViewDelegate, UITableViewData
     var clubMenu: [[String]] = [[String]]()
    
     @IBOutlet weak var tableView: UITableView!
-    
-   
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,7 +15,7 @@ struct Menu:Decodable{
 }
 
 class HomeViewController: UIViewController {
-    var  ad = ""
+    
     @IBOutlet weak var menuText: UITextView!
     @IBOutlet weak var eventText: UITextView!
     

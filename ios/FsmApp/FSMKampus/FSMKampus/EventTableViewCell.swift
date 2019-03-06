@@ -1,21 +1,20 @@
 //
-//  ClubTableViewCell.swift
+//  EventTableViewCell.swift
 //  FSMKampus
 //
-//  Created by mehmet özcan on 22.01.2019.
+//  Created by mehmet özcan on 23.02.2019.
 //  Copyright © 2019 Mert Agcakoyun. All rights reserved.
 //
 
 import UIKit
 
-class ClubTableViewCell: UITableViewCell {
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    
-    @IBOutlet weak var textArea: UITextView!
-    @IBOutlet weak var logoView: UIImageView!
-    
-    
+class EventTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
