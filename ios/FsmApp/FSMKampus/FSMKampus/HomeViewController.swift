@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
             do{
                 let menu = try JSONDecoder().decode(Menu.self, from: data!)
                 
-                DispatchQueue.main.async {
+                DispatchQueue.main.sync(execute: {
                     for i in 0..<menu.values.count{
                         for j in 0..<menu.values[0].count{
                             if result == menu.values[i][0]{
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
                     if isContain == false{
                         self.menuText.text = "Bugün yemekhane kapalı!"
                     }
-                }
+                })
                 
                 
                 
